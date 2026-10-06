@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="meta.title">Seekingomega Capital</title>
-<meta name="description" data-i18n-content="meta.desc" content="Seekingomega Capital is a private partnership of three associates in Jakarta that buys small IDX-listed companies going through corporate actions. NAV per unit against the IHSG since May 2020.">
+<meta name="description" data-i18n-content="meta.desc" content="Three associates in Jakarta buying small IDX companies in the middle of corporate actions. Since May 2020.">
 <link rel="canonical" href="https://seekingomega.capital/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Seekingomega Capital">
 <meta property="og:title" content="Seekingomega Capital">
-<meta property="og:description" data-i18n-content="meta.desc" content="Seekingomega Capital is a private partnership of three associates in Jakarta that buys small IDX-listed companies going through corporate actions. NAV per unit against the IHSG since May 2020.">
+<meta property="og:description" data-i18n-content="meta.desc" content="Three associates in Jakarta buying small IDX companies in the middle of corporate actions. Since May 2020.">
 <meta property="og:url" content="https://seekingomega.capital/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="id_ID">
@@ -20,15 +20,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/chart.css">
 <script>document.documentElement.className = "js";</script>
 <script src="assets/site.js" defer></script>
+<script src="assets/chart.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="site-header">
   <div class="notice">
-    <p class="wrap" data-i18n="notice">We never raise money or give stock tips through WhatsApp, Telegram or social media. seekingomega.capital is our only website.</p>
+    <p class="wrap" data-i18n="notice">No WhatsApp groups, no Telegram, no stock tips. Anyone raising money in our name is not us.</p>
   </div>
   <div class="wrap bar">
     <a class="wordmark" href="./">Seekingomega Capital</a>
@@ -57,16 +59,20 @@
         <p class="eyebrow" data-i18n="hero.eyebrow">Jakarta, since May 2020</p>
         <h1 id="hero-title" data-i18n="hero.h1">We buy small Indonesian companies when their ownership, capital or structure is about to&nbsp;change.</h1>
       </div>
-      <div class="hero-body">
-        <p class="lede" data-i18n="hero.body">Seekingomega Capital is a private partnership of three associates in Jakarta. Since May 2020 we have put the partners’ own pooled capital into companies on the Indonesia Stock Exchange that are going through a corporate action: rights issues, tender offers, mergers, backdoor listings, restructurings and spin-offs.</p>
-        <p class="hero-link"><a href="#record" data-i18n="hero.link">See the yearly figures</a></p>
-      </div>
+      <figure class="chart hero-chart" data-chart="growth" aria-labelledby="chart-title">
+        <figcaption class="chart-head">
+          <p class="chart-title" id="chart-title" data-chart-t="title">100 invested on 30 April 2020</p>
+          <ul class="chart-legend" aria-hidden="true"></ul>
+        </figcaption>
+        <div class="chart-plot">
+          <p class="chart-nojs" data-chart-t="summary">By 30 September 2026: Seekingomega 408, IHSG 129.</p>
+          <div class="chart-tip" hidden></div>
+        </div>
+        <p class="vh chart-live" aria-live="polite"></p>
+      </figure>
       <dl class="facts">
-        <div><dt data-i18n="facts.base.t">Based in</dt><dd data-i18n="facts.base.d">Jakarta, Indonesia</dd></div>
-        <div><dt data-i18n="facts.since.t">Investing since</dt><dd data-i18n="facts.since.d">May 2020</dd></div>
-        <div><dt data-i18n="facts.market.t">Market</dt><dd data-i18n="facts.market.d">Small companies listed on the IDX</dd></div>
-        <div><dt data-i18n="facts.capital.t">Capital</dt><dd data-i18n="facts.capital.d">USD xx,xxx,xxx (not published)</dd></div>
-        <div><dt data-i18n="facts.open.t">Open to the public</dt><dd data-i18n="facts.open.d">No. Private conversations only.</dd></div>
+        <div><dt data-i18n="facts.capital.t">Capital</dt><dd data-i18n="facts.capital.d">USD xx,xxx,xxx. Small enough to buy what big funds can’t.</dd></div>
+        <div><dt data-i18n="facts.open.t">Open to the public</dt><dd data-i18n="facts.open.d">No.</dd></div>
       </dl>
     </div>
   </section>
@@ -75,63 +81,35 @@
     <div class="wrap grid">
       <div class="rail">
         <p class="sec-n" aria-hidden="true">01</p>
-        <p class="eyebrow" data-i18n="ap.eyebrow">Approach</p>
-        <h2 id="approach-title" data-i18n="ap.h2">Corporate actions in small IDX companies</h2>
+        <h2 id="approach-title" data-i18n="ap.h2">Small companies, thick prospectuses</h2>
       </div>
       <div class="content">
-        <p class="objective" data-i18n="ap.objective">We judge our work by one number: the change in net asset value (NAV) per unit, compared with the IHSG, the Jakarta Composite Index.</p>
+        <p class="objective" data-i18n="ap.objective">Required reading: the IDX disclosure feed.</p>
 
-        <h3 class="sub" data-i18n="ap.how">How we work</h3>
-        <ol class="principles">
-          <li>
-            <h4 data-i18n="ap.p1.t">Start from the filing</h4>
-            <p data-i18n="ap.p1.d">Corporate actions on the IDX are announced through <span lang="id">keterbukaan informasi</span>, the exchange’s public disclosure system. A rights issue prospectus, a tender offer notice or a shareholder meeting agenda is where an idea starts.</p>
-          </li>
-          <li>
-            <h4 data-i18n="ap.p2.t">Stay with small companies</h4>
-            <p data-i18n="ap.p2.d">We own small listed companies. A single corporate action can change who owns the business and on what terms.</p>
-          </li>
-          <li>
-            <h4 data-i18n="ap.p3.t">Measure one number</h4>
-            <p data-i18n="ap.p3.d">NAV per unit, with every contribution and withdrawal unitised, set against the IHSG. The periods we did worse stay in the table next to the periods we did better.</p>
-          </li>
-          <li>
-            <h4 data-i18n="ap.p4.t">Our own capital, in private</h4>
-            <p data-i18n="ap.p4.d">The capital is the partners’ own, pooled. We do not raise money from the public, and we discuss capital only in private conversations.</p>
-          </li>
-        </ol>
-
-        <h3 class="sub" data-i18n="ap.sit">Situations we look for</h3>
         <dl class="situations">
           <div>
-            <dt data-i18n="ap.s1.t">Rights issues</dt>
-            <dd class="term" lang="id" data-i18n="ap.s1.g">HMETD, hak memesan efek terlebih dahulu</dd>
-            <dd data-i18n="ap.s1.d">Who the standby buyer is, what the proceeds pay for, and what the price does to holders who do not take up their rights.</dd>
+            <dt><span data-i18n="ap.s1.t">Rights issues</span> <span class="term" lang="id">HMETD</span></dt>
+            <dd data-i18n="ap.s1.d">Who the standby buyer is, and who gets diluted.</dd>
           </div>
           <div>
             <dt data-i18n="ap.s2.t">Tender offers</dt>
-            <dd class="term" lang="id" data-i18n="ap.s2.g">penawaran tender</dd>
-            <dd data-i18n="ap.s2.d">The price offered, the conditions attached, and what happens to the shares left behind.</dd>
+            <dd data-i18n="ap.s2.d">The offer price. Then what is left for everyone else.</dd>
           </div>
           <div>
             <dt data-i18n="ap.s3.t">Mergers and acquisitions</dt>
-            <dd class="term" lang="id" data-i18n="ap.s3.g">penggabungan usaha dan pengambilalihan</dd>
-            <dd data-i18n="ap.s3.d">The exchange ratio or the price, who ends up in control, and whether a mandatory tender offer follows.</dd>
+            <dd data-i18n="ap.s3.d">Who ends up in control. Whether a mandatory tender offer follows.</dd>
           </div>
           <div>
             <dt data-i18n="ap.s4.t">Backdoor listings</dt>
-            <dd class="term" lang="id" data-i18n="ap.s4.g">pencatatan melalui pintu belakang</dd>
-            <dd data-i18n="ap.s4.d">A private business enters the exchange through a company that is already listed. We read what is being put in, and at what value.</dd>
+            <dd data-i18n="ap.s4.d">What goes into the shell, and at what price.</dd>
           </div>
           <div>
             <dt data-i18n="ap.s5.t">Restructurings</dt>
-            <dd class="term" lang="id" data-i18n="ap.s5.g">restrukturisasi</dd>
-            <dd data-i18n="ap.s5.d">Debt turned into shares, assets sold or a balance sheet rebuilt. We read who owns the company once it is done.</dd>
+            <dd data-i18n="ap.s5.d">Who owns the company once the debt becomes shares.</dd>
           </div>
           <div>
             <dt data-i18n="ap.s6.t">Spin-offs</dt>
-            <dd class="term" lang="id" data-i18n="ap.s6.g">pemisahan usaha</dd>
-            <dd data-i18n="ap.s6.d">A business separated from its parent and handed to shareholders who did not choose to own it.</dd>
+            <dd data-i18n="ap.s6.d">A business handed to shareholders who never asked for it.</dd>
           </div>
         </dl>
       </div>
@@ -142,29 +120,28 @@
     <div class="wrap grid">
       <div class="rail">
         <p class="sec-n" aria-hidden="true">02</p>
-        <p class="eyebrow" data-i18n="rec.eyebrow">Record</p>
-        <h2 id="record-title" data-i18n="rec.h2">NAV per unit against the IHSG, period by period</h2>
+        <h2 id="record-title" data-i18n="rec.h2">Against the IHSG</h2>
       </div>
 
       <div class="content">
-        <p class="objective" data-i18n="rec.intro">The change in our net asset value per unit for each period, next to the IHSG over the same dates. The periods where we did worse stay in the table.</p>
+        <p class="objective" data-i18n="rec.intro">2022 was a good year. It has not happened again.</p>
 
         <div class="panel">
           <table class="ledger-table">
             <caption>
-              <span class="cap-title" data-i18n="rec.caption">Change in NAV per unit and in the IHSG, in percent, May 2020 to 30 September 2026</span>
+              <span class="cap-title" data-i18n="rec.caption">% change, to 30 September 2026</span>
             </caption>
             <thead>
               <tr>
                 <th scope="col" data-i18n="rec.col.period">Period</th>
-                <th scope="col" class="num" data-i18n="rec.col.us">Seeking&shy;omega, %</th>
-                <th scope="col" class="num" data-i18n="rec.col.ihsg">IHSG, %</th>
+                <th scope="col" class="num">Seeking&shy;omega</th>
+                <th scope="col" class="num">IHSG</th>
                 <th scope="col" class="num" data-i18n="rec.col.diff">Difference, pts</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2020">2020, May&nbsp;to&nbsp;Dec<sup><a href="#fn1" aria-label="Note 1">1</a></sup></span></span></th>
+                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2020">2020, May&nbsp;to&nbsp;Dec</span></span></th>
                 <td class="n">+33.4</td><td class="n">+26.8</td><td class="n">+6.6</td>
               </tr>
               <tr>
@@ -180,7 +157,7 @@
                 <td class="n">−5.2</td><td class="n">+6.2</td><td class="n">−11.3</td>
               </tr>
               <tr>
-                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2024">Jan&nbsp;2024 to Apr&nbsp;2025<sup><a href="#fn2" aria-label="Note 2">2</a></sup></span></span></th>
+                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2024">Jan&nbsp;2024 to Apr&nbsp;2025<sup><a href="#fn1" aria-label="Note 1">1</a></sup></span></span></th>
                 <td class="n">−12.6</td><td class="n">−7.0</td><td class="n">−5.7</td>
               </tr>
               <tr>
@@ -194,32 +171,25 @@
             </tbody>
             <tfoot>
               <tr>
-                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.since">Since inception, May&nbsp;2020 to Sep&nbsp;2026</span></span></th>
+                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.since">Since May&nbsp;2020</span></span></th>
                 <td class="n">+308.3</td><td class="n">+28.7</td><td class="n">+279.6</td>
               </tr>
               <tr>
-                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.ann">Annualised, over 6.4&nbsp;years</span></span></th>
-                <td class="n">+24.5</td><td class="n">+4.0</td><td class="nil" data-i18n="rec.na">Not compared</td>
+                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.ann">Annualised</span></span></th>
+                <td class="n">+24.5</td><td class="n">+4.0</td><td><span class="vh" data-i18n="rec.na">Not compared</span></td>
               </tr>
               <tr>
-                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.dd">Worst peak-to-trough fall, Oct&nbsp;2023 to Jun&nbsp;2025</span></span></th>
-                <td class="n">−46.5</td><td class="nil" colspan="2" data-i18n="rec.na">Not compared</td>
+                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.dd">Worst fall, Oct&nbsp;2023 to Jun&nbsp;2025</span></span></th>
+                <td class="n">−46.5</td><td colspan="2"><span class="vh" data-i18n="rec.na">Not compared</span></td>
               </tr>
             </tfoot>
           </table>
         </div>
-        <div class="after-panel">
-          <p class="months" data-i18n="rec.months">Of 68 recorded months, 31 were up, 24 were down and 13 were flat.</p>
-          <p class="stamp" data-i18n="rec.asof">Figures as of 30 September 2026.</p>
+        <p class="months" data-i18n="rec.months">68 months: 31 up, 24 down, 13 flat.</p>
+        <div class="footnotes">
+          <p id="fn1"><sup>1</sup> <span data-i18n="rec.fn1">No NAV recorded Aug 2024 to Apr 2025.</span></p>
+          <p data-i18n="rec.fn2">Partners’ own capital, unitised, unaudited. IHSG excludes dividends.</p>
         </div>
-
-        <ol class="footnotes">
-          <li id="fn1" data-i18n="rec.fn1">2020 is a partial year. The record starts from our NAV per unit on 30 April 2020.</li>
-          <li id="fn2" data-i18n="rec.fn2">Monthly NAV was not recorded from August 2024 to April 2025. The NAV was carried unchanged across that gap, so this row compares the whole span from January 2024 to April 2025 with the IHSG over the same span.</li>
-          <li data-i18n="rec.fn3">The IHSG is a price index and excludes dividends. Index closes are from IDX data as reported in the press. Differences are in percentage points and are calculated from unrounded figures.</li>
-          <li data-i18n="rec.fn4">Our figures are NAV per unit of the partners’ own pooled capital, with contributions and withdrawals unitised. We calculate them from our own records. They are unaudited.</li>
-        </ol>
-        <p class="not-offer" data-i18n="rec.notoffer">These figures describe the partners’ own pooled capital. They are not an offer of units or an invitation to invest, and past performance does not indicate future results.<br> <a href="disclosures/">Read the full disclosures</a></p>
       </div>
     </div>
   </section>
@@ -228,7 +198,6 @@
     <div class="wrap grid">
       <div class="rail">
         <p class="sec-n" aria-hidden="true">03</p>
-        <p class="eyebrow" data-i18n="hold.eyebrow">Holdings</p>
         <h2 id="holdings-title" data-i18n="hold.h2">What we own</h2>
       </div>
       <div class="content">
@@ -255,7 +224,7 @@
             </div>
           </li>
         </ol>
-        <p class="stamp-line" data-i18n="hold.asof">Positions as of 30 September 2026. Not a recommendation. We may sell any of these without updating this page.</p>
+        <p class="stamp-line" data-i18n="hold.asof">As of 30 September 2026. Not recommendations. We may sell before this page notices.</p>
       </div>
     </div>
   </section>
@@ -264,39 +233,34 @@
     <div class="wrap grid">
       <div class="rail">
         <p class="sec-n" aria-hidden="true">04</p>
-        <p class="eyebrow" data-i18n="ppl.eyebrow">People</p>
         <h2 id="people-title" data-i18n="ppl.h2">Three associates</h2>
       </div>
       <div class="content">
-        <p class="people-intro" data-i18n="ppl.intro">Each of us holds the same title. We are listed by first name, in alphabetical order.</p>
         <ul class="people-list">
           <li class="person">
             <div class="who">
-              <p class="eyebrow" data-i18n="ppl.role1">Associate</p>
               <h3>Firdaus</h3>
             </div>
             <div class="about">
-              <p data-i18n="ppl.daus">Firdaus, known as Daus, is a small-cap analyst. Daus covers the smaller IDX companies that make up most of what we look at.</p>
+              <p data-i18n="ppl.daus">Small-cap analyst. Answers to Daus.</p>
               <p class="mail"><a href="mailto:Daus@seekingomega.capital">Daus@seekingomega.capital</a></p>
             </div>
           </li>
           <li class="person">
             <div class="who">
-              <p class="eyebrow" data-i18n="ppl.role2">Associate</p>
               <h3>Ghafur</h3>
             </div>
             <div class="about">
-              <p data-i18n="ppl.ghafur">Ghafur’s background is in corporate actions, mergers and acquisitions. Ghafur works through the terms of each deal we study: the parties, the price and the timetable.</p>
+              <p data-i18n="ppl.ghafur">Corporate actions and M&amp;A. Takes every deal apart: parties, price, timetable.</p>
               <p class="mail"><a href="mailto:Ghafur@seekingomega.capital">Ghafur@seekingomega.capital</a></p>
             </div>
           </li>
           <li class="person">
             <div class="who">
-              <p class="eyebrow" data-i18n="ppl.role3">Associate</p>
               <h3>Joshua</h3>
             </div>
             <div class="about">
-              <p data-i18n="ppl.josh">Joshua comes from the cigarette industry, which in Indonesia largely means kretek. Joshua brings that background to the consumer companies we study.</p>
+              <p data-i18n="ppl.josh">From the cigarette industry. Kretek country.</p>
               <p class="mail"><a href="mailto:Josh@seekingomega.capital">Josh@seekingomega.capital</a></p>
             </div>
           </li>
@@ -309,19 +273,11 @@
     <div class="wrap grid">
       <div class="rail">
         <p class="sec-n" aria-hidden="true">05</p>
-        <p class="eyebrow" data-i18n="ct.eyebrow">Contact</p>
-        <h2 id="contact-title" data-i18n="ct.h2">Write to the associates</h2>
+        <h2 id="contact-title" data-i18n="ct.h2">Write to us</h2>
       </div>
       <div class="content contact-body">
-        <p data-i18n="ct.p1">We talk about capital in private conversations only. If you are a qualified individual, a company or a fellow investor, you are welcome to write.</p>
-        <p data-i18n="ct.p2">One email reaches all three of us. We do not discuss money through WhatsApp, Telegram or social media.</p>
+        <p data-i18n="ct.p1">Qualified individuals, companies and fellow investors only.</p>
         <p class="cta"><a class="button" href="mailto:Daus@seekingomega.capital,Ghafur@seekingomega.capital,Josh@seekingomega.capital" data-i18n="ct.button">Email the three associates</a></p>
-        <dl class="addresses">
-          <div><dt>Firdaus</dt><dd><a href="mailto:Daus@seekingomega.capital">Daus@seekingomega.capital</a></dd></div>
-          <div><dt>Ghafur</dt><dd><a href="mailto:Ghafur@seekingomega.capital">Ghafur@seekingomega.capital</a></dd></div>
-          <div><dt>Joshua</dt><dd><a href="mailto:Josh@seekingomega.capital">Josh@seekingomega.capital</a></dd></div>
-        </dl>
-        <p class="place" data-i18n="ct.place">Jakarta, Indonesia</p>
       </div>
     </div>
   </section>
@@ -332,12 +288,12 @@
   <div class="wrap grid">
     <div class="foot-main">
       <p class="entity" data-i18n="ft.entity">Seekingomega Capital is a name used by CV Maju Insan Sejahtera, Jakarta.</p>
-      <p data-i18n="ft.legal">We are not licensed by OJK as an investment manager or adviser, and nothing on this site is an offer or a recommendation. Past performance is not a reliable indicator of future results.</p>
-      <p><a href="disclosures/" data-i18n="ft.disc">Read the full disclosures</a></p>
+      <p data-i18n="ft.legal">Not licensed by OJK. Not an offer, not advice. Past performance does not indicate future results.</p>
+      <p><a href="disclosures/" data-i18n="ft.disc">Disclosures</a></p>
     </div>
     <div class="foot-meta">
-      <p>© 2020–2026 CV Maju Insan Sejahtera</p>
-      <p data-i18n="ft.updated">Page updated October 2026</p>
+      <p>© 2020–2026 <span class="nb">CV Maju Insan Sejahtera</span></p>
+      <p data-i18n="ft.updated">Updated October 2026</p>
     </div>
   </div>
 </footer>

@@ -76,16 +76,17 @@ Do this once a month, after the month-end NAV is final. Every figure on the site
 
 1. **Record table** in `index.html`, section `id="record"`:
    - Update the figures in the row for the current year (`2026, Jan to 30 Sep` becomes `2026, Jan to 31 Oct`, and so on). Change the label text in `index.html` and the matching `rec.r2026` entry in `assets/site.js`.
-   - Update the three closing rows: since inception, annualised (and its number of years), and the worst peak-to-trough fall if it has changed. Their labels are `rec.since`, `rec.ann` and `rec.dd` in `assets/site.js`.
-   - Update the month count line under the table (`rec.months`, "Of 68 recorded months, 31 were up, 24 were down and 13 were flat.").
-   - Update the caption end date (`rec.caption`, "May 2020 to 30 September 2026").
+   - Update the three closing rows: since May 2020, annualised, and the worst fall if it has changed. Their labels are `rec.since`, `rec.ann` and `rec.dd` in `assets/site.js`.
+   - Update the month count line under the table (`rec.months`, "68 months: 31 up, 24 down, 13 flat.").
+   - Update the caption end date (`rec.caption`, "% change, to 30 September 2026").
    - Write figures with one decimal, a plus sign for gains and a true minus sign (−, not a hyphen) for losses. The Indonesian decimal comma is applied automatically.
-2. **Dates.** Search `index.html`, `assets/site.js` and `disclosures/index.html` for the old date (for example `30 September 2026`) and replace every occurrence: the "Figures as of" stamp under the table (`rec.asof`), the table caption (`rec.caption`), the holdings line (`hold.asof`), the stamp at the top of the disclosures page (`dc.stamp`), and the "Holdings" paragraph in both language blocks of `disclosures/index.html`. Write the Indonesian dates with Indonesian month names (for example `31 Oktober 2026`) in `assets/site.js` and in the Indonesian block of the disclosures page; a search and replace of the English date will not change those.
-3. **Holdings.** If a position was bought or sold, edit the list in `index.html` (`id="holdings"`), the Indonesian descriptions (`hold.*`) in `assets/site.js`, and the "Holdings" paragraph in both languages in `disclosures/index.html`.
-4. **IHSG closes.** In both language blocks of `disclosures/index.html`, replace the latest IHSG close (30 September 2026) with the new month-end close. Add a row only when a new year-end close is used.
-5. **Page updated.** Change `Page updated October 2026` and `Halaman diperbarui Oktober 2026` (`ft.updated`) on both pages, and the stamp at the top of the disclosures page (`dc.stamp`, "Page updated October 2026").
-6. **New year.** In January, add a row for the year just closed, start a new current-year row, and change `© 2020–2026` in the footer of both pages.
-7. Check the page in both languages (`?lang=id`), then commit and push. GitHub Pages redeploys in about a minute.
+2. **Dates.** Search `index.html`, `assets/site.js` and `disclosures/index.html` for the old date (for example `30 September 2026`) and replace every occurrence: the table caption (`rec.caption`), the holdings line (`hold.asof`). Write the Indonesian dates with Indonesian month names (for example `31 Oktober 2026`) in `assets/site.js` and in the Indonesian block of the disclosures page; a search and replace of the English date will not change those.
+3. **Holdings.** If a position was bought or sold, edit the list in `index.html` (`id="holdings"`), and the Indonesian descriptions (`hold.*`) in `assets/site.js`.
+4. **Chart.** In `assets/chart.js`, append the new month-end value to `FUND` and to `IHSG` (both indexed to 100 at 30 April 2020: NAV per unit ÷ inception NAV × 100, IHSG close ÷ 4,716.40 × 100) and set `AS_OF` to the day of the month-end NAV. In `index.html`, update the date and the two numbers in the one-line chart summary (`data-chart-t="summary"`), which is what shows without JavaScript. If the worst fall changes, update `FALL`.
+5. **IHSG closes.** In both language blocks of `disclosures/index.html`, replace the latest IHSG close (30 September 2026) with the new month-end close. Add a row only when a new year-end close is used.
+6. **Updated.** Change `Updated October 2026` and `Diperbarui Oktober 2026` (`ft.updated`) on both pages.
+7. **New year.** In January, add a row for the year just closed, start a new current-year row, and change `© 2020–2026` in the footer of both pages.
+8. Check the page in both languages (`?lang=id`), then commit and push. GitHub Pages redeploys in about a minute.
 
 ## Translation
 
@@ -99,11 +100,10 @@ The site names one legal entity, written identically everywhere: `CV Maju Insan 
 |---|---|---|
 | `index.html` | Footer, `ft.entity` | "Seekingomega Capital is a name used by CV Maju Insan Sejahtera, Jakarta." |
 | `index.html` | Footer, `foot-meta` | "© 2020–2026 CV Maju Insan Sejahtera" |
-| `disclosures/index.html` | Footer, same two lines as above | Same as above |
+| `disclosures/index.html` | Footer, `foot-meta` | "© 2020–2026 CV Maju Insan Sejahtera" |
 | `disclosures/index.html` | Meta description and `og:description` | "a name used by CV Maju Insan Sejahtera, Jakarta" |
 | `disclosures/index.html` | "Who we are", English | Entity name and legal form "a limited partnership (persekutuan komanditer)" |
-| `disclosures/index.html` | "Tentang kami", Indonesian | Entity name and legal form "persekutuan komanditer" |
-| `disclosures/index.html` | "No licence" and "Tidak berizin" | Entity name: once in English, twice in Indonesian |
+| `disclosures/index.html` | "Siapa kami", Indonesian | Entity name and legal form "persekutuan komanditer" |
 | `assets/site.js` | `ft.entity` and `dc.desc` | Indonesian versions of the entity sentence and the disclosures meta description |
 
-The legal form wording ("limited partnership", "persekutuan komanditer") appears only on the disclosures page. When the registration number (NIB or AHU) is known, add it as a second sentence in "Who we are" and "Tentang kami".
+The legal form wording ("limited partnership", "persekutuan komanditer") appears only on the disclosures page. When the registration number (NIB or AHU) is known, add it as a sentence in "Who we are" and "Siapa kami".

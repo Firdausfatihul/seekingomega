@@ -21,7 +21,8 @@
 :root[data-theme="dark"] { --paper:#16130F; --ink:#ECE5D8; --ink-muted:#A89F90; --rule:#3A332A; --accent:#D98A5F; --accent-strong:#E8A47E; color-scheme: dark; }
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.125rem/1.6 "IBM Plex Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; font-synthesis: none; }
-main { max-width: 75rem; margin-inline: auto; padding: 4rem 1rem 6rem; border-top: 2px solid var(--ink); }
+body { border-top: 2px solid var(--ink); }
+main { max-width: 75rem; margin-inline: auto; padding: 4rem 1rem 6rem; }
 @media (min-width: 40rem) { main { padding: 6rem 2rem 8rem; } }
 p { margin: 0; max-width: 36rem; text-wrap: pretty; }
 h1, .h1 { margin: 0 0 1rem; font: 400 2.25rem/1.15 "Newsreader", Georgia, serif; text-wrap: balance; }
@@ -39,17 +40,16 @@ a:active { color: var(--accent-strong); text-underline-offset: 0.1em; }
 <body>
 <main>
   <p class="mark">Seekingomega Capital</p>
+  <p class="eyebrow">404</p>
   <div class="block" lang="en">
-    <p class="eyebrow">Error 404</p>
-    <h1>This page does not exist</h1>
-    <p>The address may be mistyped, or the page may have been moved.</p>
-    <p><a class="home" href="https://seekingomega.capital/">Go to the home page</a></p>
+    <h1>No page at this address</h1>
+    <p>Delisted, or never listed.</p>
+    <p><a class="home" href="https://seekingomega.capital/">Home page</a></p>
   </div>
   <div class="block" lang="id">
-    <p class="eyebrow">Galat 404</p>
-    <h2 class="h1">Halaman ini tidak ditemukan</h2>
-    <p>Alamatnya mungkin salah ketik, atau halamannya telah dipindahkan.</p>
-    <p><a class="home" href="https://seekingomega.capital/">Buka halaman utama</a></p>
+    <h2 class="h1">Tidak ada halaman di alamat ini</h2>
+    <p>Sudah delisting, atau memang tidak pernah tercatat.</p>
+    <p><a class="home" href="https://seekingomega.capital/">Beranda</a></p>
   </div>
 </main>
 <script>
