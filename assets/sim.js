@@ -136,7 +136,9 @@
   }
 
   Sim.prototype.options = function () {
-    var sel = this.select, keep = sel.value;
+    var sel = this.select;
+    if (!sel) return;
+    var keep = sel.value;
     sel.textContent = "";
     for (var i = 0; i < this.n - 1; i++) {   // any month before the last; the last is the fixed end
       var o = document.createElement("option");
@@ -154,13 +156,13 @@
       if (t[k]) el.textContent = t[k];
     });
     var last = this.d.months[this.n - 1];
-    var endEl = root.querySelector(".sim-end-v");
+    var endEl = root.querySelector(".sim-end-v:not(.sim-from-v)");
     if (endEl) endEl.textContent = this.d.day + " " + monthName(last);
     var self = this;
     KEYS.forEach(function (k) { self.rows[k].name.textContent = t[k]; });
     // keep the selected month, relabel options
     var sel = this.select;
-    Array.prototype.forEach.call(sel.options, function (o) { o.textContent = monthName(self.d.months[+o.value]); });
+    if (sel) Array.prototype.forEach.call(sel.options, function (o) { o.textContent = monthName(self.d.months[+o.value]); });
     if (document.activeElement !== this.input || this.valid) this.input.value = num(this.amt, 0, 0);
     if (!this.err.hidden) this.err.textContent = this.errKey ? t[this.errKey] : "";
   };
@@ -187,7 +189,7 @@
     input.addEventListener("blur", function () {
       if (self.valid) input.value = num(self.amt, 0, 0);
     });
-    this.select.addEventListener("change", function () {
+    if (this.select) this.select.addEventListener("change", function () {
       self.start = +self.select.value;
       self.update(true);
     });

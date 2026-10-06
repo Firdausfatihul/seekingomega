@@ -106,7 +106,7 @@
 
 /* When the end date wraps under the inputs, it reads as one line. */
 @container sim (max-width: 30.49rem) {
-  .sim-field:last-child { flex-basis: 100%; max-width: none; display: flex; align-items: baseline; column-gap: var(--s-2); }
+  .sim-field:nth-child(2), .sim-field:last-child { flex-basis: 100%; max-width: none; display: flex; align-items: baseline; column-gap: var(--s-2); }
   .sim-end-v { height: auto; }
 }
 
