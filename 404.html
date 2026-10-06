@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found / Halaman tidak ditemukan | Seekingomega Capital</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4EFE4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130F">
+<link rel="icon" href="https://seekingomega.capital/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap">
+<!-- GitHub Pages serves this file at any missing path, so relative asset links would break.
+     The styles are inline on purpose. -->
+<style>
+:root { --paper:#F4EFE4; --ink:#1E1B16; --ink-muted:#5E574C; --rule:#D6CDBB; --accent:#8A3A1E; --accent-strong:#6E2D16; color-scheme: light; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper:#16130F; --ink:#ECE5D8; --ink-muted:#A89F90; --rule:#3A332A; --accent:#D98A5F; --accent-strong:#E8A47E; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper:#16130F; --ink:#ECE5D8; --ink-muted:#A89F90; --rule:#3A332A; --accent:#D98A5F; --accent-strong:#E8A47E; color-scheme: dark; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.125rem/1.6 "IBM Plex Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; font-synthesis: none; }
+main { max-width: 75rem; margin-inline: auto; padding: 4rem 1rem 6rem; border-top: 2px solid var(--ink); }
+@media (min-width: 40rem) { main { padding: 6rem 2rem 8rem; } }
+p { margin: 0; max-width: 36rem; text-wrap: pretty; }
+h1, .h1 { margin: 0 0 1rem; font: 400 2.25rem/1.15 "Newsreader", Georgia, serif; text-wrap: balance; }
+@media (min-width: 40rem) { h1, .h1 { font-size: 3rem; line-height: 1.05; } }
+.mark { margin-bottom: 4rem; font: 500 1.375rem/1.4 "Newsreader", Georgia, serif; }
+.eyebrow { margin-bottom: 0.5rem; font-size: 0.75rem; line-height: 1.4; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); }
+.block + .block { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+.block p + p { margin-top: 1rem; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+a:active { color: var(--accent-strong); text-underline-offset: 0.1em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="mark">Seekingomega Capital</p>
+  <div class="block" lang="en">
+    <p class="eyebrow">Error 404</p>
+    <h1>This page does not exist</h1>
+    <p>The address may be mistyped, or the page may have been moved.</p>
+    <p><a class="home" href="https://seekingomega.capital/">Go to the home page</a></p>
+  </div>
+  <div class="block" lang="id">
+    <p class="eyebrow">Galat 404</p>
+    <h2 class="h1">Halaman ini tidak ditemukan</h2>
+    <p>Alamatnya mungkin salah ketik, atau halamannya telah dipindahkan.</p>
+    <p><a class="home" href="https://seekingomega.capital/">Buka halaman utama</a></p>
+  </div>
+</main>
+<script>
+/* Without JavaScript the links go to https://seekingomega.capital/.
+   On a github.io project site the home page lives one folder down, for example /repo/. */
+(function () {
+  var h = location.hostname, seg = location.pathname.split("/")[1], to = null;
+  if (/\.github\.io$/.test(h) && seg) to = "/" + seg + "/";
+  else if (/^https?:$/.test(location.protocol) && h !== "seekingomega.capital") to = "/";
+  if (to) Array.prototype.forEach.call(document.querySelectorAll("a.home"), function (a) { a.href = to; });
+})();
+</script>
+</body>
+</html>
