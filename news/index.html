@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="nw.title">Updates | Seekingomega Capital</title>
+<meta name="description" data-i18n-content="nw.desc" content="Financial reports, company news and shareholder meetings of PT Triple Delapan Investama Sedaya.">
+<link rel="canonical" href="https://seekingomega.capital/news/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Seekingomega Capital">
+<meta property="og:title" content="Updates | Seekingomega Capital">
+<meta property="og:description" data-i18n-content="nw.desc" content="Financial reports, company news and shareholder meetings of PT Triple Delapan Investama Sedaya.">
+<meta property="og:url" content="https://seekingomega.capital/news/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="id_ID">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4EFE4">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16130F">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/news.css">
+<script>
+document.documentElement.className = "js";
+/* A typing error in posts.js: remember the line so the page can name it (http/https only). */
+window.addEventListener("error", function (e) { if (/posts\.js/.test(e.filename || "")) window.SO_NEWS_ERROR = { line: e.lineno, msg: e.message }; });
+</script>
+<script src="../assets/site.js" defer></script>
+<script src="posts.js" defer></script>
+<script src="../assets/news.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-header">
+  <div class="notice">
+    <p class="wrap" data-i18n="notice">No WhatsApp groups, no Telegram, no stock tips. Anyone raising money in our name is not us.</p>
+  </div>
+  <div class="wrap bar bar--doc">
+    <a class="wordmark" href="../">Seekingomega Capital</a>
+    <nav class="nav" aria-label="Main" data-i18n-aria="nav.label">
+      <ul>
+        <li><a href="../" data-i18n="nav.home">Home</a></li>
+        <li><a href="./" aria-current="page" data-i18n="nav.news">Updates</a></li>
+      </ul>
+    </nav>
+    <div class="lang" role="group" aria-label="Language" data-i18n-aria="lang.label">
+      <button type="button" data-lang-set="en" aria-pressed="true" lang="en">EN<span class="vh"> English</span></button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang-set="id" aria-pressed="false" lang="id">ID<span class="vh"> Bahasa Indonesia</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="news" data-news="list">
+    <div class="doc-head news-head wrap">
+      <h1 data-i18n="nw.h1">Updates</h1>
+      <div class="news-filter" role="group" aria-label="Category" data-news-filter hidden></div>
+    </div>
+
+    <div class="news-list" data-news-list></div>
+    <p class="news-empty wrap" data-news-empty hidden>No posts yet.</p>
+    <p class="news-nojs wrap" data-i18n="nw.nojs">This page needs JavaScript.</p>
+    <p class="vh" aria-live="polite" data-news-status></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap grid">
+    <div class="foot-main">
+      <p data-i18n="ft.legal">Not licensed by OJK. Not an offer, not advice. Past performance does not indicate future results.</p>
+      <p><a href="../disclosures/" data-i18n="ft.disc">Disclosures</a></p>
+    </div>
+    <div class="foot-meta">
+      <p>© 2026 <span class="nb">PT Triple Delapan Investama Sedaya</span></p>
+      <p data-i18n="ft.updated">Updated October 2026</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

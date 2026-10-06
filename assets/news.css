@@ -1,0 +1,316 @@
+/* Seekingomega Capital. News page and the home page "Latest" block.
+   Uses the tokens and type scale from site.css. Loaded after it. */
+
+/* ---------- header link to this page ---------- */
+/* Home nav item. Below 360 px it would push the Indonesian nav to a third row;
+   there the "Latest" block and the footer link lead to the page instead. */
+.nav li.nav-news { display: none; }
+@media (min-width: 22.5rem) {
+  .nav li.nav-news { display: list-item; }
+}
+
+.nav a[aria-current="page"] {
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* ---------- news page ---------- */
+.news { padding-bottom: var(--s-9); }
+.news-head { padding-bottom: var(--s-6); }
+
+.news-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-5);
+}
+.news-filter[hidden] { display: none; }
+.news-filter-b {
+  appearance: none;
+  margin: 0;
+  min-height: 2.75rem;
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fm1);
+  line-height: var(--lm1);
+  font-weight: 400;
+  cursor: pointer;
+}
+.news-filter-b:hover { border-color: var(--ink); color: var(--ink); }
+.news-filter-b[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+  font-weight: 500;
+}
+.news-filter-b:active { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--paper); }
+@media (prefers-reduced-motion: no-preference) {
+  .news-filter-b { transition: color 120ms ease, background-color 120ms ease, border-color 120ms ease; }
+}
+
+/* One post. Rule above each; the first one shown gets the heavy rule. */
+.post > .wrap {
+  position: relative;
+  padding-block: var(--s-5) var(--s-7);
+  row-gap: var(--s-3);
+}
+.post > .wrap::before,
+.news-empty::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  border-top: 1px solid var(--rule);
+}
+.post:not([hidden]):not(.post:not([hidden]) ~ .post) > .wrap::before,
+.news-empty::before { border-top-color: var(--ink); }
+.post[hidden] { display: none; }
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--s-3);
+  font-size: var(--fm1);
+  line-height: var(--lm1);
+  color: var(--ink-muted);
+}
+.post-meta .eyebrow { margin: 0; }
+.post-date { font-variant-numeric: tabular-nums lining-nums; }
+
+.post-title {
+  font-family: var(--serif);
+  font-size: var(--f1);
+  line-height: var(--l1);
+  font-weight: 500;
+  scroll-margin-top: var(--s-6);
+}
+.post { scroll-margin-top: var(--s-4); }
+.post-body { margin-top: var(--s-4); }
+.post-body p + p { margin-top: var(--s-4); }
+
+.post-facts {
+  margin-top: var(--s-5);
+  max-width: 28rem;
+  border-top: 1px solid var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.post-facts > div {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  column-gap: var(--s-4);
+  align-items: baseline;
+  padding-block: var(--s-2);
+  border-bottom: 1px solid var(--rule);
+}
+.post-facts dt {
+  font-size: var(--fm2);
+  line-height: var(--lm2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+.post-facts dd { font-size: var(--f0); line-height: var(--l0); }
+
+.post-files { margin-top: var(--s-5); }
+.post-files li + li { margin-top: var(--s-2); }
+.post-type { color: var(--ink-muted); }
+
+.post-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: var(--s-2);
+  margin-top: var(--s-5);
+}
+.post-photo {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--paper-sunk);
+  border-radius: 2px;
+}
+.post-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.post-photo:hover img { opacity: 0.85; }
+/* A photo that does not load is taken out by news.js; so is the grid when none load. */
+.post-photos[hidden],
+.post-photos li[hidden] { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .post-photo img { transition: opacity 120ms ease; }
+}
+
+.news-empty {
+  position: relative;
+  padding-block: var(--s-5) var(--s-7);
+  color: var(--ink-muted);
+}
+.news-empty[hidden] { display: none; }
+
+.news-nojs { color: var(--ink-muted); padding-bottom: var(--s-7); }
+.js .news-nojs { display: none; }
+
+@media (min-width: 40rem) {
+  .post-meta { grid-column: 1 / 3; display: block; }
+  .post-meta .eyebrow { margin-bottom: var(--s-1); }
+  .post-main { grid-column: 3 / 7; }
+  .post-title { font-size: var(--f2); line-height: var(--l2); font-weight: 400; }
+}
+@media (min-width: 64rem) {
+  .post-meta { grid-column: 1 / 4; }
+  .post-main { grid-column: 4 / 10; }
+}
+
+/* ---------- photo viewer ---------- */
+html.viewer-open { overflow: hidden; }
+.viewer {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: var(--s-4) var(--gutter);
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+.viewer[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  row-gap: var(--s-3);
+}
+.viewer::backdrop { background: var(--paper); }
+.viewer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+.viewer-count {
+  font-size: var(--fm1);
+  line-height: var(--lm1);
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.viewer-count[hidden] { display: block; visibility: hidden; }
+.viewer-fig {
+  margin: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+}
+.viewer-fig img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 12rem);
+  max-height: calc(100dvh - 12rem);
+  object-fit: contain;
+}
+.viewer-cap {
+  max-width: 40rem;
+  font-size: var(--fm1);
+  line-height: var(--lm1);
+  color: var(--ink-muted);
+  text-wrap: pretty;
+}
+.viewer-cap[hidden] { display: none; }
+.viewer-nav { display: flex; justify-content: flex-end; gap: var(--s-2); }
+.viewer-nav[hidden] { display: none; }
+.viewer-b {
+  appearance: none;
+  margin: 0;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--fm1);
+  line-height: var(--lm1);
+  font-weight: 500;
+  cursor: pointer;
+}
+.viewer-b:hover { background: var(--ink); color: var(--paper); }
+.viewer-b:active { background: var(--accent-strong); border-color: var(--accent-strong); color: var(--paper); }
+.viewer-b:disabled { border-color: var(--rule); color: var(--ink-muted); background: transparent; cursor: default; }
+@media (prefers-reduced-motion: no-preference) {
+  .viewer-b { transition: color 120ms ease, background-color 120ms ease; }
+}
+
+/* ---------- home page: latest ---------- */
+/* Ships hidden; news.js shows it once it has posts. Stays hidden without JS. */
+.latest[hidden],
+.latest-list[hidden] { display: none; }
+.latest-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: "date cat" "title title";
+  column-gap: var(--s-3);
+  row-gap: var(--s-1);
+  align-items: baseline;
+  padding-block: var(--s-4);
+  border-bottom: 1px solid var(--rule);
+}
+.latest-item:first-child { padding-top: 0; }
+.latest-date {
+  grid-area: date;
+  font-size: var(--fm1);
+  line-height: var(--lm1);
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.latest-cat {
+  grid-area: cat;
+  font-size: var(--fm2);
+  line-height: var(--lm2);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+.latest-title {
+  grid-area: title;
+  font-family: var(--serif);
+  font-size: var(--f1);
+  line-height: var(--l1);
+  color: var(--ink);
+  text-decoration-color: var(--ink-muted);
+  text-wrap: balance;
+}
+.latest-title:hover { color: var(--accent-strong); text-decoration-color: currentColor; }
+.latest-all { margin-top: var(--s-5); font-size: var(--fm1); line-height: var(--lm1); }
+
+@media (min-width: 64rem) {
+  .latest-item {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    grid-template-areas: none;
+    column-gap: 1.5rem;
+    row-gap: 0;
+  }
+  .latest-date { grid-column: 1 / 3; grid-row: 1; }
+  .latest-cat { grid-column: 1 / 3; grid-row: 2; }
+  .latest-title { grid-column: 3 / 10; grid-row: 1; }
+}
+
+@media print {
+  .news-filter, .viewer { display: none; }
+  .post[hidden] { display: block; }
+}

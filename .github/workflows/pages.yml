@@ -1,0 +1,50 @@
+# Checks the site, then publishes it to GitHub Pages.
+# A broken news/posts.js or script never goes live: the previous site stays up and
+# GitHub emails a failed run that names the file and line.
+# Requires Settings > Pages > Build and deployment > Source: "GitHub Actions".
+name: Check and publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check news/posts.js and its files
+        run: node tools/check-news.cjs
+
+      - name: Check every script for typing errors
+        run: |
+          for f in assets/*.js news/posts.js; do
+            echo "node --check $f"
+            node --check "$f"
+          done
+
+      - uses: actions/configure-pages@v6
+
+      # The whole repository root is the site, including CNAME and .nojekyll.
+      # .git and .github are always left out by this action.
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+          include-hidden-files: true
+
+      - id: deployment
+        uses: actions/deploy-pages@v5

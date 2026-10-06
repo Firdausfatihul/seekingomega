@@ -459,13 +459,14 @@ h3 {
   margin-left: 0.15em;
 }
 .ledger-table sup a { text-decoration-line: none; font-weight: 500; }
+.ledger-table .dd-when { display: block; font-size: var(--fm1); line-height: var(--lm1); font-weight: 400; color: var(--ink-muted); }
 .ledger-table sup a:hover { text-decoration-line: underline; }
 
 @media (max-width: 39.99rem) {
   .ledger-table tr {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: var(--s-3);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: var(--s-2);
     align-items: baseline;
   }
   .ledger-table thead tr { border-bottom: 1px solid var(--ink); }
@@ -478,7 +479,6 @@ h3 {
   .ledger-table th[scope="row"] { grid-column: 1 / -1; padding: var(--s-3) var(--s-2) 0; }
   .ledger-table tbody td, .ledger-table tfoot td { padding: var(--s-1) 0 var(--s-3); }
   .ledger-table tbody td:last-child, .ledger-table tfoot td:last-child { padding-right: var(--s-2); }
-  .ledger-table td[colspan="2"] { grid-column: span 2; }
   .ledger-table tfoot tr:first-child td, .ledger-table tfoot tr + tr td { border-top: 0; }
 }
 @media (max-width: 22.49rem) {
@@ -507,7 +507,7 @@ h3 {
 @media (min-width: 40rem) {
   .panel { padding: var(--s-5); }
   .ledger-table { font-size: var(--f0); line-height: var(--l0); }
-  .ledger-table th.num { width: 7.5rem; }
+  .ledger-table th.num { width: 6.5rem; }
   .ledger-table thead th.num { white-space: nowrap; }
   .ledger-table td { padding-left: var(--s-5); }
   .ledger-table thead th.num { padding-left: var(--s-5); }
@@ -517,6 +517,8 @@ h3 {
   .ledger-table tbody th, .ledger-table tbody td { padding-top: var(--s-2); padding-bottom: var(--s-2); }
   .ledger-table tbody .lead,
   .ledger-table tfoot .lead { display: flex; align-items: baseline; align-items: last baseline; }
+  /* Worst fall: figures sit on the label, not on the dates under it. */
+  .ledger-table tfoot .lead { align-items: first baseline; }
   .ledger-table tbody .lead::after {
     content: "";
     flex: 1 1 auto;
@@ -526,9 +528,14 @@ h3 {
     opacity: 0.55;
   }
 }
+/* Tablet: four figure columns; keep the longest period label on one line. */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .ledger-table th.num { width: 5.5rem; }
+  .ledger-table td, .ledger-table thead th.num { padding-left: var(--s-4); }
+}
 @media (min-width: 64rem) {
   .panel { padding: var(--s-6) var(--s-7) var(--s-6); }
-  .ledger-table th.num { width: 8rem; }
+  .ledger-table th.num { width: 7rem; }
   /* One line per period, leaders included. */
   .ledger-table tbody .lbl { white-space: nowrap; }
   .ledger-table tbody .lead::after { min-width: var(--s-4); }

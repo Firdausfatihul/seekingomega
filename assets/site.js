@@ -43,22 +43,21 @@
     "ap.s6.d": "Usaha yang diserahkan kepada pemegang saham yang tidak pernah memintanya.",
 
     /* record */
-    "rec.h2": "Dibanding IHSG",
+    "rec.h2": "Dibanding IHSG, S&amp;P&nbsp;500, dan emas",
     "rec.intro": "Tahun 2022 bagus sekali. Belum terulang.",
     "rec.caption": "Perubahan %, hingga 30 September 2026",
     "rec.col.period": "Periode",
-    "rec.col.diff": "Selisih, poin",
+    "rec.col.gold": "Emas",
     "rec.r2020": "2020, Mei&nbsp;s.d.&nbsp;Des",
     "rec.r2024": "Jan&nbsp;2024 s.d.&nbsp;Apr&nbsp;2025<sup><a href=\"#fn1\" aria-label=\"Catatan 1\">1</a></sup>",
     "rec.r2025": "Mei&nbsp;s.d.&nbsp;Des 2025",
     "rec.r2026": "2026, Jan&nbsp;s.d. 30&nbsp;Sep",
     "rec.since": "Sejak Mei&nbsp;2020",
     "rec.ann": "Disetahunkan",
-    "rec.dd": "Penurunan terdalam, Okt&nbsp;2023 s.d.&nbsp;Jun&nbsp;2025",
-    "rec.na": "Tidak dibandingkan",
+    "rec.dd": "Penurunan terdalam <span class=\"dd-when\">Kami: Okt&nbsp;2023 s.d.&nbsp;Jun&nbsp;2025</span>",
     "rec.months": "68 bulan: 31 naik, 24 turun, 13 datar.",
     "rec.fn1": "NAB tidak tercatat Agu 2024 s.d. Apr 2025.",
-    "rec.fn2": "Modal para mitra sendiri, dihitung per unit, tidak diaudit. IHSG tanpa dividen.",
+    "rec.fn2": "Modal para mitra sendiri, dihitung per unit, tidak diaudit. S&amp;P&nbsp;500 dan emas dalam rupiah pada kurs USD/IDR akhir bulan. Harga saja, tanpa dividen.",
 
     /* holdings */
     "hold.h2": "Saham yang kami pegang",
@@ -88,7 +87,16 @@
     /* disclosures page chrome */
     "dc.title": "Pengungkapan | Seekingomega Capital",
     "dc.desc": "Seekingomega Capital adalah nama yang dipakai PT Triple Delapan Investama Sedaya. Tidak berizin OJK. Bukan penawaran.",
-    "dc.h1": "Pengungkapan"
+    "dc.h1": "Pengungkapan",
+
+    /* news page and home "Latest" block */
+    "nav.news": "Kabar",
+    "nw.title": "Kabar | Seekingomega Capital",
+    "nw.desc": "Laporan keuangan, kabar perusahaan, dan RUPS PT Triple Delapan Investama Sedaya.",
+    "nw.h1": "Kabar",
+    "nw.nojs": "Halaman ini memerlukan JavaScript.",
+    "nw.latest": "Terbaru",
+    "nw.all": "Semua kabar"
   };
 
   var root = document.documentElement;
@@ -157,10 +165,22 @@
     return /^id\b|^in\b/i.test(nav) ? "id" : "en";
   }
 
+  /* A shared link may carry ?lang=. Keep it in step with the choice so a
+     reload or a copied address shows the language now on screen. */
+  function syncQuery(lang) {
+    if (!/[?&]lang=/.test(window.location.search)) return;
+    try {
+      var q = window.location.search.replace(/^\?/, "").split("&")
+        .map(function (kv) { return /^lang=/.test(kv) ? "lang=" + lang : kv; });
+      window.history.replaceState(window.history.state, "", window.location.pathname + "?" + q.join("&") + window.location.hash);
+    } catch (e) { /* file:// in some browsers */ }
+  }
+
   Array.prototype.forEach.call(buttons, function (b) {
     b.addEventListener("click", function () {
       var lang = b.getAttribute("data-lang-set");
       write(lang);
+      syncQuery(lang);
       apply(lang);
     });
   });

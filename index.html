@@ -21,9 +21,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/chart.css">
+<link rel="stylesheet" href="assets/sim.css">
+<link rel="stylesheet" href="assets/news.css">
 <script>document.documentElement.className = "js";</script>
 <script src="assets/site.js" defer></script>
+<script src="assets/data.js" defer></script>
 <script src="assets/chart.js" defer></script>
+<script src="assets/sim.js" defer></script>
+<script src="news/posts.js" defer></script>
+<script src="assets/news.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
@@ -41,6 +47,7 @@
         <li><a href="#holdings"><span class="sn" aria-hidden="true">03</span><span data-i18n="nav.holdings">Holdings</span></a></li>
         <li><a href="#people"><span class="sn" aria-hidden="true">04</span><span data-i18n="nav.people">People</span></a></li>
         <li><a href="#contact"><span class="sn" aria-hidden="true">05</span><span data-i18n="nav.contact">Contact</span></a></li>
+        <li class="nav-news"><a href="news/"><span data-i18n="nav.news">Updates</span></a></li>
       </ul>
     </nav>
     <div class="lang" role="group" aria-label="Language" data-i18n-aria="lang.label">
@@ -61,11 +68,11 @@
       </div>
       <figure class="chart hero-chart" data-chart="growth" aria-labelledby="chart-title">
         <figcaption class="chart-head">
-          <p class="chart-title" id="chart-title" data-chart-t="title">100 invested on 30 April 2020</p>
+          <p class="chart-title" id="chart-title" data-chart-t="title">Rp100 invested on 30 April 2020</p>
           <ul class="chart-legend" aria-hidden="true"></ul>
         </figcaption>
         <div class="chart-plot">
-          <p class="chart-nojs" data-chart-t="summary">By 30 September 2026: Seekingomega 408, IHSG 129.</p>
+          <p class="chart-nojs" data-chart-t="summary">By 30 September 2026: Seekingomega 408, S&amp;P&nbsp;500 306, gold 289, IHSG 129.</p>
           <div class="chart-tip" hidden></div>
         </div>
         <p class="vh chart-live" aria-live="polite"></p>
@@ -120,7 +127,7 @@
     <div class="wrap grid">
       <div class="rail">
         <p class="sec-n" aria-hidden="true">02</p>
-        <h2 id="record-title" data-i18n="rec.h2">Against the IHSG</h2>
+        <h2 id="record-title" data-i18n="rec.h2">Against IHSG, S&amp;P&nbsp;500 and gold</h2>
       </div>
 
       <div class="content">
@@ -136,51 +143,52 @@
                 <th scope="col" data-i18n="rec.col.period">Period</th>
                 <th scope="col" class="num">Seeking&shy;omega</th>
                 <th scope="col" class="num">IHSG</th>
-                <th scope="col" class="num" data-i18n="rec.col.diff">Difference, pts</th>
+                <th scope="col" class="num">S&amp;P&nbsp;500</th>
+                <th scope="col" class="num" data-i18n="rec.col.gold">Gold</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2020">2020, May&nbsp;to&nbsp;Dec</span></span></th>
-                <td class="n">+33.4</td><td class="n">+26.8</td><td class="n">+6.6</td>
+                <td class="n">+33.4</td><td class="n">+26.8</td><td class="n">+17.1</td><td class="n">+2.2</td>
               </tr>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl">2021</span></span></th>
-                <td class="n">+53.2</td><td class="n">+10.1</td><td class="n">+43.1</td>
+                <td class="n">+53.2</td><td class="n">+10.1</td><td class="n">+31.0</td><td class="n">−0.4</td>
               </tr>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl">2022</span></span></th>
-                <td class="n">+123.4</td><td class="n">+4.1</td><td class="n">+119.3</td>
+                <td class="n">+123.4</td><td class="n">+4.1</td><td class="n">−11.9</td><td class="n">+9.2</td>
               </tr>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl">2023</span></span></th>
-                <td class="n">−5.2</td><td class="n">+6.2</td><td class="n">−11.3</td>
+                <td class="n">−5.2</td><td class="n">+6.2</td><td class="n">+22.7</td><td class="n">+12.0</td>
               </tr>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2024">Jan&nbsp;2024 to Apr&nbsp;2025<sup><a href="#fn1" aria-label="Note 1">1</a></sup></span></span></th>
-                <td class="n">−12.6</td><td class="n">−7.0</td><td class="n">−5.7</td>
+                <td class="n">−12.6</td><td class="n">−7.0</td><td class="n">+26.5</td><td class="n">+73.6</td>
               </tr>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2025">May&nbsp;to&nbsp;Dec 2025</span></span></th>
-                <td class="n">+11.2</td><td class="n">+27.8</td><td class="n">−16.6</td>
+                <td class="n">+11.2</td><td class="n">+27.8</td><td class="n">+22.9</td><td class="n">+30.8</td>
               </tr>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.r2026">2026, Jan&nbsp;to 30&nbsp;Sep</span></span></th>
-                <td class="n">−3.0</td><td class="n">−29.8</td><td class="n">+26.8</td>
+                <td class="n">−3.0</td><td class="n">−29.8</td><td class="n">+18.6</td><td class="n">+2.4</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.since">Since May&nbsp;2020</span></span></th>
-                <td class="n">+308.3</td><td class="n">+28.7</td><td class="n">+279.6</td>
+                <td class="n">+308.3</td><td class="n">+28.7</td><td class="n">+205.9</td><td class="n">+189.4</td>
               </tr>
               <tr>
                 <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.ann">Annualised</span></span></th>
-                <td class="n">+24.5</td><td class="n">+4.0</td><td><span class="vh" data-i18n="rec.na">Not compared</span></td>
+                <td class="n">+24.5</td><td class="n">+4.0</td><td class="n">+19.0</td><td class="n">+18.0</td>
               </tr>
               <tr>
-                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.dd">Worst fall, Oct&nbsp;2023 to Jun&nbsp;2025</span></span></th>
-                <td class="n">−46.5</td><td colspan="2"><span class="vh" data-i18n="rec.na">Not compared</span></td>
+                <th scope="row"><span class="lead"><span class="lbl" data-i18n="rec.dd">Worst fall <span class="dd-when">Ours: Oct&nbsp;2023 to Jun&nbsp;2025</span></span></span></th>
+                <td class="n">−46.5</td><td class="n">−34.7</td><td class="n">−20.1</td><td class="n">−17.6</td>
               </tr>
             </tfoot>
           </table>
@@ -188,8 +196,37 @@
         <p class="months" data-i18n="rec.months">68 months: 31 up, 24 down, 13 flat.</p>
         <div class="footnotes">
           <p id="fn1"><sup>1</sup> <span data-i18n="rec.fn1">No NAV recorded Aug 2024 to Apr 2025.</span></p>
-          <p data-i18n="rec.fn2">Partners’ own capital, unitised, unaudited. IHSG excludes dividends.</p>
+          <p data-i18n="rec.fn2">Partners’ own capital, unitised, unaudited. S&amp;P&nbsp;500 and gold in rupiah at month-end USD/IDR. Prices only, no dividends.</p>
         </div>
+
+        <section class="sim" id="simulation" data-sim aria-labelledby="sim-title">
+          <h3 id="sim-title" class="sim-title">Rp1 million in four places</h3>
+          <form class="sim-form" novalidate>
+            <div class="sim-field">
+              <label for="sim-amt"><span data-sim-t="amount">Amount</span><span class="vh"> (Rp)</span></label>
+              <div class="sim-amt"><span aria-hidden="true">Rp</span><input id="sim-amt" type="text" inputmode="numeric" size="10" autocomplete="off" spellcheck="false" maxlength="15" value="1,000,000" aria-describedby="sim-err"></div>
+              <p id="sim-err" class="sim-err" hidden></p>
+            </div>
+            <div class="sim-field">
+              <label for="sim-start" data-sim-t="start">From</label>
+              <select id="sim-start" class="sim-start"><option value="0">April 2020</option></select>
+            </div>
+            <div class="sim-field">
+              <span class="sim-k" data-sim-t="end">To</span>
+              <span class="sim-end-v">30 September 2026</span>
+            </div>
+          </form>
+          <p class="sim-nojs">Rp1,000,000 on 30 April 2020, to 30 September 2026.</p>
+          <ol class="sim-rows">
+            <li class="sim-row" data-k="fund"><span class="sim-name">Seekingomega</span><span class="sim-val">Rp4.08 million</span><span class="sim-pct">+308.3%</span><span class="sim-bar" aria-hidden="true"><span class="sim-fill" style="width:100%"></span><span class="sim-mark" style="left:24.49%"></span></span><span class="sim-gap" data-sim-t="gap" hidden>No NAV recorded that month. Last recorded value used.</span></li>
+            <li class="sim-row" data-k="spx"><span class="sim-name">S&amp;P&nbsp;500</span><span class="sim-val">Rp3.06 million</span><span class="sim-pct">+205.9%</span><span class="sim-bar" aria-hidden="true"><span class="sim-fill" style="width:74.91%"></span><span class="sim-mark" style="left:24.49%"></span></span></li>
+            <li class="sim-row" data-k="gold"><span class="sim-name">Gold</span><span class="sim-val">Rp2.89 million</span><span class="sim-pct">+189.4%</span><span class="sim-bar" aria-hidden="true"><span class="sim-fill" style="width:70.89%"></span><span class="sim-mark" style="left:24.49%"></span></span></li>
+            <li class="sim-row" data-k="ihsg"><span class="sim-name">IHSG</span><span class="sim-val">Rp1.29 million</span><span class="sim-pct">+28.7%</span><span class="sim-bar" aria-hidden="true"><span class="sim-fill" style="width:31.53%"></span><span class="sim-mark" style="left:24.49%"></span></span></li>
+          </ol>
+          <div class="sim-axis" aria-hidden="true"><span class="sim-axis-l" style="left:24.49%">Rp1 million</span></div>
+          <p class="sim-live vh" aria-live="polite"></p>
+          <p class="sim-fine" data-sim-t="fine">Hypothetical. Month-end prices, no costs, taxes or dividends. Not a forecast.</p>
+        </section>
       </div>
     </div>
   </section>
@@ -282,6 +319,18 @@
     </div>
   </section>
 
+  <section class="section latest" id="latest" aria-labelledby="latest-title" data-news="latest" data-news-base="news/" data-news-limit="3" hidden>
+    <div class="wrap grid">
+      <div class="rail">
+        <h2 id="latest-title" data-i18n="nw.latest">Latest</h2>
+      </div>
+      <div class="content">
+        <ol class="latest-list" data-news-list></ol>
+        <p class="latest-all"><a href="news/" data-i18n="nw.all">All updates</a></p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -289,6 +338,7 @@
     <div class="foot-main">
       <p class="entity" data-i18n="ft.entity">Seekingomega Capital is a name used by PT Triple Delapan Investama Sedaya.</p>
       <p data-i18n="ft.legal">Not licensed by OJK. Not an offer, not advice. Past performance does not indicate future results.</p>
+      <p><a href="news/" data-i18n="nav.news">Updates</a></p>
       <p><a href="disclosures/" data-i18n="ft.disc">Disclosures</a></p>
     </div>
     <div class="foot-meta">
