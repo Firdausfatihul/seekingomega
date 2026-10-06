@@ -94,16 +94,16 @@ English is written directly in the HTML so the page reads correctly without Java
 
 ## Changing the legal entity
 
-The site names one legal entity, written identically everywhere: `CV Maju Insan Sejahtera`. If the legal entity changes, replace these strings. Search the whole folder for `Maju Insan` afterwards to confirm nothing is left.
+The site names one legal entity, written identically everywhere: `PT Triple Delapan Investama Sedaya`. If the legal entity changes, replace these strings. Search the whole folder for `Triple Delapan` afterwards to confirm nothing is left.
 
 | File | Where | What to change |
 |---|---|---|
-| `index.html` | Footer, `ft.entity` | "Seekingomega Capital is a name used by CV Maju Insan Sejahtera, Jakarta." |
-| `index.html` | Footer, `foot-meta` | "© 2020–2026 CV Maju Insan Sejahtera" |
-| `disclosures/index.html` | Footer, `foot-meta` | "© 2020–2026 CV Maju Insan Sejahtera" |
-| `disclosures/index.html` | Meta description and `og:description` | "a name used by CV Maju Insan Sejahtera, Jakarta" |
-| `disclosures/index.html` | "Who we are", English | Entity name and legal form "a limited partnership (persekutuan komanditer)" |
-| `disclosures/index.html` | "Siapa kami", Indonesian | Entity name and legal form "persekutuan komanditer" |
+| `index.html` | Footer, `ft.entity` | "Seekingomega Capital is a name used by PT Triple Delapan Investama Sedaya." |
+| `index.html` | Footer, `foot-meta` | "© 2026 PT Triple Delapan Investama Sedaya" |
+| `disclosures/index.html` | Footer, `foot-meta` | "© 2026 PT Triple Delapan Investama Sedaya" |
+| `disclosures/index.html` | Meta description and `og:description` | "a name used by PT Triple Delapan Investama Sedaya" |
+| `disclosures/index.html` | "Who we are", English | Entity name and legal form "a limited liability company (perseroan terbatas)" |
+| `disclosures/index.html` | "Siapa kami", Indonesian | Entity name and domicile wording "berkedudukan di Jakarta" |
 | `assets/site.js` | `ft.entity` and `dc.desc` | Indonesian versions of the entity sentence and the disclosures meta description |
 
-The legal form wording ("limited partnership", "persekutuan komanditer") appears only on the disclosures page. When the registration number (NIB or AHU) is known, add it as a sentence in "Who we are" and "Siapa kami".
+The legal form wording ("limited liability company", "berkedudukan di Jakarta") appears only on the disclosures page. When the registration number (NIB or AHU) is known, add it as a sentence in "Who we are" and "Siapa kami".

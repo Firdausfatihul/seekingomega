@@ -80,14 +80,14 @@
     "ct.button": "Email ketiga associate",
 
     /* footer */
-    "ft.entity": "Seekingomega Capital adalah nama yang dipakai CV Maju Insan Sejahtera, Jakarta.",
+    "ft.entity": "Seekingomega Capital adalah nama yang dipakai PT Triple Delapan Investama Sedaya.",
     "ft.legal": "Tidak berizin OJK. Bukan penawaran, bukan nasihat. Kinerja masa lalu tidak mencerminkan kinerja masa datang.",
     "ft.disc": "Pengungkapan",
     "ft.updated": "Diperbarui Oktober 2026",
 
     /* disclosures page chrome */
     "dc.title": "Pengungkapan | Seekingomega Capital",
-    "dc.desc": "Seekingomega Capital adalah nama yang dipakai CV Maju Insan Sejahtera, Jakarta. Tidak berizin OJK. Bukan penawaran.",
+    "dc.desc": "Seekingomega Capital adalah nama yang dipakai PT Triple Delapan Investama Sedaya. Tidak berizin OJK. Bukan penawaran.",
     "dc.h1": "Pengungkapan"
   };
 
